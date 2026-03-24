@@ -10,16 +10,15 @@ const links = [
     {
       label: "Home",
       icon: "i-lucide-house",
-      to: "/",
+      to: "/dashboard",
       onSelect: () => {
         open.value = false;
       },
     },
     {
-      label: "Inbox",
-      icon: "i-lucide-inbox",
-      to: "/inbox",
-      badge: "4",
+      label: "Manajemen Pengguna",
+      icon: "i-lucide:users",
+      to: "/users",
       onSelect: () => {
         open.value = false;
       },

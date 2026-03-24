@@ -12,5 +12,17 @@ export default defineAppConfig({
         ],
       },
     },
+    pageHeader: {
+      slots: {
+        root: 'relative border-b border-default pb-4',
+      },
+      variants: {
+        title: {
+          true: {
+            description: 'mt-2'
+          }
+        }
+      }
+    }
   },
 });
