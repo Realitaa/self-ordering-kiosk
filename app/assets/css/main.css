@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "@nuxt/ui";
+@import "./stepLoader.css";
 
 :root {
   color-scheme: light dark;

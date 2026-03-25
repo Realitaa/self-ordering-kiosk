@@ -95,11 +95,13 @@ async function onSubmit(payload: FormSubmitEvent<Schema>) {
 }
 
 // Transition state
-const activateTransition = ref(false);
+const isHydrating = ref(true);
 
-setTimeout(() => {
-  activateTransition.value = true;
-}, 100);
+onMounted(() => {
+  setTimeout(() => {
+    isHydrating.value = false;
+  }, 100);
+});
 </script>
 
 <template>
@@ -128,21 +130,26 @@ setTimeout(() => {
     </div>
 
     <!-- RIGHT: Login Form -->
-    <div
-      class="w-full md:w-1/2 h-full flex items-center justify-center p-6 transition-opacity duration-250"
-      :class="{ 'opacity-0': !activateTransition }"
-    >
-      <div class="w-full max-w-sm">
-        <UAuthForm
-          title="Sistem Penitipan Hewan"
-          description="Masuk sebelum melanjutkan"
-          icon="fluent:animal-cat-16-regular"
-          :submit="buttonSubmit"
-          :fields="fields"
-          :schema="schema"
-          @submit="onSubmit"
-        />
-      </div>
+    <div class="w-full md:w-1/2 h-full flex items-center justify-center p-6">
+      <div class="loader" v-if="isHydrating"></div>
+
+      <Transition
+        enter-active-class="transition-opacity duration-500 ease-out"
+        enter-from-class="opacity-0"
+        enter-to-class="opacity-100"
+      >
+        <div v-if="!isHydrating" class="w-full max-w-sm">
+          <UAuthForm
+            title="Sistem Penitipan Hewan"
+            description="Masuk sebelum melanjutkan"
+            icon="fluent:animal-cat-16-regular"
+            :submit="buttonSubmit"
+            :fields="fields"
+            :schema="schema"
+            @submit="onSubmit"
+          />
+        </div>
+      </Transition>
     </div>
   </div>
 </template>
