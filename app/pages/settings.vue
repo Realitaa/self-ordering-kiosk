@@ -20,9 +20,10 @@
         description="Kelola pengaturan aplikasi secara personal."
         class="pt-0!"
       />
-      <div class="space-y-12">
+      <div class="space-y-10">
         <SettingAppearance />
         <SettingProfilePicture />
+        <SettingBiodata />
       </div>
     </template>
   </UDashboardPanel>
