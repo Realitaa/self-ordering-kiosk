@@ -32,4 +32,8 @@ export default defineNuxtConfig({
       include: ["zod", "dayjs", "dayjs/locale/id"],
     },
   },
+
+  runtimeConfig: {
+    sessionTokenAge: 1,
+  },
 });

@@ -4,13 +4,13 @@ import "dayjs/locale/id";
 dayjs.locale("id");
 
 export const useClock = () => {
-  const now = ref(dayjs());
+  const nowRef = ref(now());
 
   let interval: NodeJS.Timeout;
 
   onMounted(() => {
     interval = setInterval(() => {
-      now.value = dayjs();
+      nowRef.value = now();
     }, 1000);
   });
 
@@ -19,8 +19,7 @@ export const useClock = () => {
   });
 
   return {
-    now,
-    date: computed(() => now.value.format("dddd, D MMMM YYYY")),
-    time: computed(() => now.value.format("HH:mm:ss")),
+    date: computed(() => nowRef.value.format("dddd, D MMMM YYYY")),
+    time: computed(() => nowRef.value.format("HH:mm:ss")),
   };
 };
