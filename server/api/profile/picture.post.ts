@@ -1,9 +1,9 @@
 import { setUserSession } from "#imports";
 import { updateProfilePicture } from "#server/services/profile.service";
 import { ApiResponse } from "~~/server/utils/response";
-import { updateProfilePictureSchema } from "#server/schemas/profile.schema";
+import { updateProfilePictureSchema } from "#shared/schemas/profile.schema";
 import { validateSchema } from "#server/utils/validator";
-import type { UpdateProfilePictureDTO } from "#server/schemas/profile.schema";
+import type { UpdateProfilePictureDTO } from "#shared/schemas/profile.schema";
 
 export default defineEventHandler(async (event) => {
   try {

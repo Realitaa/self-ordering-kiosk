@@ -1,9 +1,9 @@
 import { setUserSession } from "#imports";
 import { login } from "#server/services/auth.service";
-import { loginSchema } from "#server/schemas/login.schema";
+import { loginSchema } from "#shared/schemas/login.schema";
 import { ApiResponse } from "#server/utils/response";
 import { validateSchema } from "#server/utils/validator";
-import type { LoginInput } from "#server/schemas/login.schema";
+import type { LoginInput } from "#shared/schemas/login.schema";
 
 export default defineEventHandler(async (event) => {
   try {

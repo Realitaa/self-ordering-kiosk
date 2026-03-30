@@ -25,3 +25,12 @@ export const updateProfilePicture = async (id: number, pfpId: number) => {
 
   return result.rows[0] || null;
 };
+
+export const updateUsername = async (id: number, username: string) => {
+  const result = await db.query(
+    `UPDATE users SET username = $1 WHERE id = $2 RETURNING *`,
+    [username, id],
+  );
+
+  return result.rows[0] || null;
+};
