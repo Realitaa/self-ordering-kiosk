@@ -11,13 +11,12 @@ export default defineEventHandler(async (event) => {
 
     const validatedData = validateSchema<LoginInput>(loginSchema, body);
 
-    const { sessionId, user } = await login(
+    const { user } = await login(
       validatedData.email,
       validatedData.password,
     );
 
     await setUserSession(event, {
-      sessionId,
       user,
     });
 

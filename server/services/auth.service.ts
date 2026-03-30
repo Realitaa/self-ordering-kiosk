@@ -1,5 +1,4 @@
 import * as userRepo from "#server/repositories/user.repository";
-import * as sessionRepo from "#server/repositories/session.repository";
 import { transformUser } from "#server/utils/transformers";
 import { NotFoundError, UnauthorizedError } from "~~/server/utils/exceptions";
 import bcrypt from "bcrypt";
@@ -12,10 +11,8 @@ export const login = async (email: string, password: string) => {
   const valid = await bcrypt.compare(password, user.password);
   if (!valid) throw new UnauthorizedError("Kredensial tidak valid");
 
-  const sessionId = await sessionRepo.createSession(user.id);
 
   return {
-    sessionId,
     user: transformUser(user),
   };
 };
