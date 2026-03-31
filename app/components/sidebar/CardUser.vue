@@ -15,7 +15,7 @@ const showLogoutConfirm = ref(false);
 
 const items = computed<DropdownMenuItem[]>(() => [
   {
-    label: "Settings",
+    label: "Pengaturan",
     icon: "i-lucide-cog",
     to: "/settings",
     onSelect: () => {
@@ -23,7 +23,7 @@ const items = computed<DropdownMenuItem[]>(() => [
     },
   },
   {
-    label: "Logout",
+    label: "Keluar",
     icon: "i-lucide-log-out",
     color: "error",
     onClick: () => {
