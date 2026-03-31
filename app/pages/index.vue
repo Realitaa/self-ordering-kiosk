@@ -17,24 +17,24 @@ const { fetch: refreshSession } = useUserSession();
 // Carousel picture list
 const carouselItems = [
   {
-    src: "1-pet-pics-pexels-peng-louis-587527-1643457.jpg",
+    src: "/img/medina-catering-AdtqezIqv7c-unsplash.jpg",
+    position: "bottom",
+  },
+  {
+    src: "/img/jonathan-borba-_Gd1biLbIU0-unsplash.jpg",
+    position: "bottom",
+  },
+  {
+    src: "/img/jill-sauve-stHOZOzZOEQ-unsplash.jpg",
+    position: "bottom",
+  },
+  {
+    src: "/img/anna-rCYi0GSicx0-unsplash.jpg",
     position: "center",
   },
   {
-    src: "2-pet-pics-pexels-shvetsa-4588455.jpg",
-    position: "bottom",
-  },
-  {
-    src: "3-pet-pics-pexels-valeriya-1805164.jpg",
-    position: "bottom",
-  },
-  {
-    src: "4-pet-pics-juliya-sidorova-FOxMZK1VQS8-unsplash.jpg",
+    src: "/img/edward-lawrence-RhSuirhXLSI-unsplash.jpg",
     position: "center",
-  },
-  {
-    src: "5-pet-pics-pexels-rutpratheep-6279101.jpg",
-    position: "bottom",
   },
 ];
 
@@ -141,9 +141,16 @@ onMounted(() => {
       <Transition enter-active-class="transition-opacity duration-500 ease-out" enter-from-class="opacity-0"
         enter-to-class="opacity-100">
         <div v-if="!isHydrating" class="w-full max-w-sm">
-          <UAuthForm title="Sistem Penitipan Hewan" description="Masuk sebelum melanjutkan"
-            icon="fluent:animal-cat-16-regular" :submit="buttonSubmit" :fields="fields" :schema="schema"
-            @submit="onSubmit" />
+          <UAuthForm title="Sistem Pemesanan Makanan" description="Masuk sebelum melanjutkan" :submit="buttonSubmit"
+            :fields="fields" :schema="schema" @submit="onSubmit">
+            <template #leading>
+              <UIcon
+                name="streamline:food-kitchenware-bowl-chop-stick-cook-soup-bowl-chopsticks-cooking-nutrition-asian-food"
+                class="size-8 shrink-0 inline-block" />
+              <UIcon name="streamline:food-drinks-wine-glass-drink-cook-glass-cooking-wine-nutrition-food"
+                class="size-8 shrink-0 inline-block" />
+            </template>
+          </UAuthForm>
         </div>
       </Transition>
     </div>

@@ -23,6 +23,11 @@ export default defineAppConfig({
           }
         }
       }
+    },
+    authForm: {
+      slots: {
+        leading: 'mb-3 flex justify-center gap-3'
+      }
     }
   },
 });
