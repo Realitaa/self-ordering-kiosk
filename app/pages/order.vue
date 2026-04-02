@@ -249,14 +249,14 @@ function qrCodeUrl(orderId: number) {
               <p class="text-sm font-medium">Tunai</p>
             </div>
           </UCard>
-          <UCard class="cursor-pointer transition-all" :class="paymentMethod === 'qris' ? 'ring-2 ring-primary' : ''"
+          <!-- <UCard class="cursor-pointer transition-all" :class="paymentMethod === 'qris' ? 'ring-2 ring-primary' : ''"
             @click="paymentMethod = 'qris'">
             <div class="flex flex-col items-center gap-2 py-2">
               <UIcon name="i-lucide-qr-code" class="size-8"
                 :class="paymentMethod === 'qris' ? 'text-primary' : 'text-muted'" />
               <p class="text-sm font-medium">QRIS</p>
             </div>
-          </UCard>
+          </UCard> -->
         </div>
       </div>
 
