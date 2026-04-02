@@ -15,6 +15,8 @@ export const findById = async (id: string) => {
     [id],
   );
 
+  console.log("db:", result.rows[0])
+
   return result.rows[0] || null;
 };
 

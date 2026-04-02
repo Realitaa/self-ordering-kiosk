@@ -1,5 +1,11 @@
 import { db } from "#shared/database/connection.js";
 
+export const findAll = async () => {
+  const result = await db.query(`SELECT * FROM stalls ORDER BY id`);
+  return result.rows;
+};
+
+
 export const create = async (name: string, ownerId: number) => {
   const result = await db.query(
     `INSERT INTO stalls (name, owner_id) VALUES ($1, $2) RETURNING *`,

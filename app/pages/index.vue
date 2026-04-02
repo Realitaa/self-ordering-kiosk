@@ -151,6 +151,9 @@ onMounted(() => {
                 class="size-8 shrink-0 inline-block" />
             </template>
           </UAuthForm>
+          <UButton color="neutral" variant="solid" to="/order" class="w-full mt-4">
+            <span class="text-center w-full">Pesan Sekarang</span>
+          </UButton>
         </div>
       </Transition>
     </div>

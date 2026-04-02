@@ -79,9 +79,13 @@ const links = computed<NavigationMenuItem[]>(() => {
           },
           {
             label: "Pesanan",
+            to: `/stall/${stall.id}/order`,
+            onSelect: () => (open.value = false),
           },
           {
             label: "Pembayaran",
+            to: `/stall/${stall.id}/payment`,
+            onSelect: () => (open.value = false),
           },
         ],
       });
