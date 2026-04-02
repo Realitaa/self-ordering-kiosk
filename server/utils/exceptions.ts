@@ -31,3 +31,11 @@ export class NotFoundError extends Error {
     this.name = "NotFoundError";
   }
 }
+
+// 409 Conflict
+export class ConflictError extends Error {
+  constructor(message = "Conflict") {
+    super(message);
+    this.name = "ConflictError";
+  }
+}

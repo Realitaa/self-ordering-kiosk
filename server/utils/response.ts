@@ -3,6 +3,7 @@ import {
   UnauthorizedError,
   ForbiddenError,
   NotFoundError,
+  ConflictError,
 } from "./exceptions";
 
 export const ApiResponse = {
@@ -34,6 +35,10 @@ export const ApiResponse = {
     } else if (err instanceof NotFoundError) {
       statusCode = 404;
       statusMessage = err.name; // "NotFoundError"
+      message = err.message;
+    } else if (err instanceof ConflictError) {
+      statusCode = 409;
+      statusMessage = err.name; // "ConflictError"
       message = err.message;
     }
 
