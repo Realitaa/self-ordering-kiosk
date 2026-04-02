@@ -13,8 +13,8 @@ CREATE TABLE orders (
     REFERENCES customers(id)
     ON DELETE CASCADE,
 
-  CONSTRAINT fk_order_tenant
+  CONSTRAINT fk_order_stall
     FOREIGN KEY (tenant_id)
-    REFERENCES tenants(id)
+    REFERENCES stalls(id)
     ON DELETE CASCADE
 );

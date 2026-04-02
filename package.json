@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "typecheck": "nuxt typecheck",
     "migrate": "node database/migrate.js",
-    "seed:admin": "node database/seeder/seedAdmin.js"
+    "seed:admin": "node database/seeder/seedAdmin.js",
+    "seed:user": "node database/seeder/seedUser.js"
   },
   "dependencies": {
     "@iconify-json/lucide": "^1.2.98",

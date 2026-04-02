@@ -5,6 +5,9 @@ const route = useRoute();
 
 const open = ref(false);
 
+// role user yang sedang login diakses dari sini dengan user.role
+const { user } = useUserSession()
+
 const links = [
   {
     label: "Beranda",
@@ -22,14 +25,16 @@ const links = [
       open.value = false;
     },
   },
-  {
-    label: "Manajemen Pengguna",
-    icon: "i-lucide:users",
-    to: "/users",
-    onSelect: () => {
-      open.value = false;
-    },
-  },
+  ...(user.role === "admin"
+    ? [
+      {
+        label: "Manajemen Pengguna",
+        icon: "i-lucide:users",
+        to: "/users",
+        onSelect: () => (open.value = false),
+      },
+    ]
+    : []),
   {
     label: 'Kios',
     icon: 'healthicons:market-stall-outline',
@@ -75,10 +80,7 @@ const links = [
       </template>
     </UDashboardSidebar>
 
-    <UDashboardSearch :groups="groups" />
-
     <slot />
 
-    <NotificationsSlideover />
   </UDashboardGroup>
 </template>

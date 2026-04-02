@@ -6,8 +6,8 @@ CREATE TABLE menus (
   stock INTEGER NOT NULL DEFAULT 0,
   created_at TIMESTAMPTZ DEFAULT CURRENT_TIMESTAMP,
 
-  CONSTRAINT fk_menu_tenant
+  CONSTRAINT fk_menu_stall
     FOREIGN KEY (tenant_id)
-    REFERENCES tenants(id)
+    REFERENCES stalls(id)
     ON DELETE CASCADE
 );
