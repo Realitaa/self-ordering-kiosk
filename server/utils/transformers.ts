@@ -6,7 +6,7 @@ export const transformUser = (user: any) => {
     email: user.email,
     role: user.role,
     pfp_id: user.pfp_id,
-    joinedAt: user.createdAt,
+    joinedAt: user.created_at,
   };
 };
 
