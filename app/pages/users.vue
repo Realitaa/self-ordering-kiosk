@@ -2,6 +2,7 @@
 import { h, resolveComponent } from "vue";
 import type { TableColumn } from "@nuxt/ui";
 import type { Row } from "@tanstack/vue-table";
+import type { ButtonProps } from '@nuxt/ui'
 
 definePageMeta({
   middleware: ["auth", "admin"],
@@ -173,6 +174,21 @@ function getRowItems(row: Row<Payment>) {
     },
   ];
 }
+
+// Add User state and action
+const openAddUserModal = ref(false)
+
+const addUserBtn = ref<ButtonProps[]>([
+  {
+    label: 'Tambah Pengguna',
+    icon: 'i-lucide-plus',
+    color: 'primary',
+    variant: 'solid',
+    onClick(event) {
+      openAddUserModal.value = true
+    },
+  }
+])
 </script>
 
 <template>
@@ -182,22 +198,19 @@ function getRowItems(row: Row<Payment>) {
         <template #leading>
           <UDashboardSidebarCollapse />
         </template>
-
-        <template #right>
-          <UDropdownMenu :items="items">
-            <UButton icon="i-lucide-plus" size="md" class="rounded-full" />
-          </UDropdownMenu>
-        </template>
       </UDashboardNavbar>
     </template>
 
     <template #body>
-      <UPageHeader
-        title="Tabel Pengguna"
-        description="Kelola data pengguna penitipan peliharaan."
-        class="pt-0!"
-      />
+      <UPageHeader title="Tabel Pengguna" description="Kelola data pengguna penitipan peliharaan." class="pt-0!"
+        :links="addUserBtn" />
       <UTable :data="data" :columns="columns" class="flex-1" />
     </template>
   </UDashboardPanel>
+
+  <UModal v-model:open="openAddUserModal">
+    <template #content>
+      <Placeholder class="h-48 m-4" />
+    </template>
+  </UModal>
 </template>

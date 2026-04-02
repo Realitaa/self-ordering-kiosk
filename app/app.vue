@@ -7,7 +7,7 @@ useHead({
   },
 });
 
-const title = "Sistem Penitipan Hewan";
+const title = "Sistem Pemesanan Makanan";
 
 useSeoMeta({
   title,
