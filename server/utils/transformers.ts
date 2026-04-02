@@ -13,3 +13,15 @@ export const transformUser = (user: any) => {
 export const transformUserList = (users: any[]) => {
   return users.map((user) => transformUser(user));
 };
+
+export const transformStall = (stall: any) => {
+  return {
+    id: stall.id,
+    name: stall.name,
+    owner_id: stall.owner_id,
+  };
+};
+
+export const transformStallList = (stalls: any[]) => {
+  return stalls.map((stall) => transformStall(stall));
+};
