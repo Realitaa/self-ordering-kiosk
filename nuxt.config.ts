@@ -42,4 +42,10 @@ export default defineNuxtConfig({
   runtimeConfig: {
     sessionTokenAge: 1,
   },
+
+  nitro: {
+    externals: {
+      external: ['pg-native']
+    }
+  },
 });
