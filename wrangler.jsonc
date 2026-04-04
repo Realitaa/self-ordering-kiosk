@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "WORKER-NAME",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-02-04",
+  "observability": {
+    "enabled": true
+  },
+
+  // Add nodejs_compat compatibility flag to support common database drivers
+  "compatibility_flags": [
+    "nodejs_compat"
+  ],
+
+  // Add this to your wrangler.jsonc
+  "hyperdrive": [
+    {
+      "binding": "HYPERDRIVE",
+      "id": "ca5de7e84cf844debbc588d6577b7a43",
+      
+      // Optional. Can be used to connect to a local database for local development with `wrangler dev`
+      "localConnectionString": "<LOCAL_CONNECTION_STRING_FOR_LOCAL_DEVELOPMENT_HERE>"
+    }
+  ]
+}
