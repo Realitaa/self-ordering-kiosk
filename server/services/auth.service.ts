@@ -1,7 +1,7 @@
 import * as userRepo from "#server/repositories/user.repository";
 import { transformUser } from "#server/utils/transformers";
 import { NotFoundError, UnauthorizedError } from "~~/server/utils/exceptions";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export const login = async (email: string, password: string) => {
   const user = await userRepo.findByEmail(email);

@@ -2,7 +2,7 @@ import * as userRepo from "#server/repositories/user.repository";
 import { transformUser, transformUserList } from "#server/utils/transformers";
 import { NotFoundError, ConflictError } from "~~/server/utils/exceptions";
 import type { CreateUserInput, UpdateUserInput } from "#shared/schemas/user.schema";
-import bcrypt from "bcrypt";
+import bcrypt from "bcryptjs";
 
 export const getAllUsers = async () => {
   const users = await userRepo.findAll();
