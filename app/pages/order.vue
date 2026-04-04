@@ -240,7 +240,7 @@ function qrCodeUrl(orderId: number) {
       <!-- Payment Method -->
       <div class="mb-6">
         <p class="text-sm font-medium mb-2">Metode Pembayaran</p>
-        <div class="grid grid-cols-2 gap-3">
+        <div class="gap-3">
           <UCard class="cursor-pointer transition-all" :class="paymentMethod === 'cash' ? 'ring-2 ring-primary' : ''"
             @click="paymentMethod = 'cash'">
             <div class="flex flex-col items-center gap-2 py-2">

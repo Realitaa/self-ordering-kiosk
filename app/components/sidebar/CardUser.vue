@@ -57,10 +57,11 @@ async function authLogout() {
     content: collapsed ? 'w-full' : 'w-(--reka-dropdown-menu-trigger-width)',
   }">
     <div class="w-full">
-      <UAvatar :src="currentPictureData?.src" v-if="collapsed" class="mb-3 hover:bg-accented hover:cursor-pointer" />
+      <UAvatar :src="`/${currentPictureData?.src}`" v-if="collapsed"
+        class="mb-3 hover:bg-accented hover:cursor-pointer" />
       <UCard :ui="{ body: 'p-1.5 sm:p-3' }" class="w-full hover:bg-accented group hover:cursor-pointer" v-else>
         <div class="flex items-center gap-2 w-full">
-          <UAvatar :src="currentPictureData?.src" />
+          <UAvatar :src="`/img/${currentPictureData?.src}`" />
           <p class="font-bold overflow-hidden text-ellipsis">{{ user?.username || user?.fullname.split(" ")[0] }}</p>
         </div>
       </UCard>

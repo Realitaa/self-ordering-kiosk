@@ -25,22 +25,24 @@ onMounted(async () => {
 // ─── Dynamic navigation links ───────────────────────────────────────
 const links = computed<NavigationMenuItem[]>(() => {
   const items: NavigationMenuItem[] = [
-    {
-      label: "Beranda",
-      icon: "i-lucide-house",
-      to: "/home",
-      onSelect: () => {
-        open.value = false;
-      },
-    },
-    {
-      label: "Dashboard",
-      icon: "lucide:chart-no-axes-combined",
-      to: "/dashboard",
-      onSelect: () => {
-        open.value = false;
-      },
-    },
+    // {
+    //   label: "Beranda",
+    //   icon: "i-lucide-house",
+    //   to: "/home",
+    //   onSelect: () => {
+    //     open.value = false;
+    //   },
+    //   disabled: true
+    // },
+    // {
+    //   label: "Dashboard",
+    //   icon: "lucide:chart-no-axes-combined",
+    //   to: "/dashboard",
+    //   onSelect: () => {
+    //     open.value = false;
+    //   },
+    //   disabled: true
+    // },
   ];
 
   // Admin-only: User management
